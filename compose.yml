@@ -1,0 +1,44 @@
+---
+services:
+  postgres:
+    image: postgres:17
+    container_name: sgerbwd-infra-postgres
+    command: postgres -c 'max_connections=250'
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=sgerbwd
+      - TZ=Europe/Warsaw
+      - PGTZ=Europe/Warsaw
+    volumes:
+      - .docker-data/postgres/pg_data:/var/lib/postgresql/data
+      #      - ./containers/postgres/db_create.sql:/docker-entrypoint-initdb.d/create.sql
+      #      - ./containers/postgres/db_seed.sql:/docker-entrypoint-initdb.d/seed.sql
+      - ./containers/postgres/psql_history:/.psql_history
+    profiles:
+      - infra
+    networks:
+      - sgerbwd
+
+  # webapp:
+  #   image: sgerbwd/webapp
+  #   container_name: sgerbwd-webapp
+  #   build:
+  #     dockerfile: ./containers/webapp/Dockerfile
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DB_URI: postgresql+asyncpg://postgres:postgres@postgres/sgerbwd
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - sgerbwd
+  #   volumes:
+  #     - .docker-data/logs/:/var/log/
+
+networks:
+  sgerbwd:
+    driver: bridge

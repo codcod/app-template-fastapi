@@ -1,0 +1,4 @@
+ALTER SYSTEM SET max_connections = 200;
+\l
+select * from messages;
+select * from events;
