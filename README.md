@@ -25,19 +25,17 @@ Start dabtabase with `COMPOSE_PROFILES=infra docker compose up -d` and then
     make run
 
 See the endpoints:
-* http://127.0.0.1:8000
-* http://127.0.0.1:8000/users
-* http://127.0.0.1:8000/users/1
+* [http://127.0.0.1:8000](http://127.0.0.1:8000)
+* [http://127.0.0.1:8000/users](http://127.0.0.1:8000/users)
+* [http://127.0.0.1:8000/users/1](http://127.0.0.1:8000/users/1)
 
-Multiplatform builds
----
+## Multiplatform builds
 
-https://docs.orbstack.dev/docker/images#multiplatform
-https://docs.docker.com/build/building/multi-platform/#building-multi-platform-images
-https://docs.docker.com/build/drivers/docker-container
+[OrbStack multiplatform](https://docs.orbstack.dev/docker/images#multiplatform)
+[Docker multiplatform](https://docs.docker.com/build/building/multi-platform/#building-multi-platform-images)
+[Docker container](https://docs.docker.com/build/drivers/docker-container)
 
-References
----
+### References
 
 See [docs/manual.adoc](Manual) for documentation.
 
