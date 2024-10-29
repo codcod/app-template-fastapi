@@ -24,6 +24,21 @@ Start dabtabase with `COMPOSE_PROFILES=infra docker compose up -d` and then
     uv sync
     make run
 
+## Database setup
+
+Create schema and seed data for the database with:
+
+    uv run -- alembic update head
+
+Database schema creation script was generated with:
+
+    uv run -- alembic revision --autogenerate -m "init"
+
+Go back to an empty database with:
+
+    uv run -- alembic downgrade base
+
+
 See the endpoints:
 * [http://127.0.0.1:8000](http://127.0.0.1:8000)
 * [http://127.0.0.1:8000/users](http://127.0.0.1:8000/users)

@@ -52,10 +52,7 @@ hey/post:
 
 .db/create:
 #	rm -f $(DB) || true
-	uv run alembic upgrade ec5
-
-.db/seed:
-	uv run alembic upgrade d26
+	uv run -- alembic upgrade head
 
 run/infra:
 	COMPOSE_PROFILES=infra docker compose up -d
