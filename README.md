@@ -38,7 +38,6 @@ Go back to an empty database with:
 
     uv run -- alembic downgrade base
 
-
 See the endpoints:
 * [http://127.0.0.1:8000](http://127.0.0.1:8000)
 * [http://127.0.0.1:8000/users](http://127.0.0.1:8000/users)
